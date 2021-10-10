@@ -1,8 +1,8 @@
 #! /bin/bash
 
-sudo apt-get -y install python3 pip python3-venv >> /dev/null
-sudo pacman -Syu python3 python-pip python-virtualenv >> /dev/null
-sudo dnf -y install python3 python-pip python3-virtualenv >> /dev/null
+sudo apt-get -y install python3 pip python3-venv 2> /dev/null
+sudo pacman -Syu python3 python-pip python-virtualenv 2> /dev/null
+sudo dnf -y install python3 python-pip python3-virtualenv 2> /dev/null
 
 mkdir /var/lib/pgadmin
 mkdir /var/log/pgadmin
