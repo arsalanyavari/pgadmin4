@@ -16,8 +16,13 @@ python3 -m venv pgadmin4
 source pgadmin4/bin/activate
 pip install pgadmin4
 
-echo "PATH=$PATH:$PWD/pgadmin4/bin" >> /etc/profile
-echo "PATH=$PATH:$PWD/pgadmin4/bin" >> ~/.profile
+shells=`ls /home/$USER -a | grep rc$`
+
+for i in $shells
+do
+	echo "PATH=$PATH:$PWD/pgadmin4/bin" >> $i
+
+done
 export PATH=$PATH:$PWD/pgadmin4/bin
 
 echo "$(tput setaf 2)Done Done =)$(tput sgr 0)"
