@@ -17,8 +17,10 @@ source pgadmin4/bin/activate
 pip install pgadmin4
 
 echo "PATH=$PATH:$PWD/pgadmin4/bin" >> /etc/profile
+echo "PATH=$PATH:$PWD/pgadmin4/bin" >> ~/.profile
 export PATH=$PATH:$PWD/pgadmin4/bin
 
 echo "$(tput setaf 2)Done Done =)$(tput sgr 0)"
+
 
 #arya-naweed
