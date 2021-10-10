@@ -16,16 +16,16 @@ python3 -m venv pgadmin4
 source pgadmin4/bin/activate
 pip install pgadmin4
 
-shells=`ls /home/$USER -a | grep rc$`
+shells=`ls ~ -a | grep rc$`
 
 for i in $shells
 do
-	echo "PATH=$PATH:$PWD/pgadmin4/bin" >> $i
+	sudo echo "PATH=$PATH:$PWD/pgadmin4/bin" >> $i
 
 done
 export PATH=$PATH:$PWD/pgadmin4/bin
 
 echo "$(tput setaf 2)Done Done =)$(tput sgr 0)"
-
+echo "open your browser on localhost:5050 after running pgadmin4 from your terminal"
 
 #arya-naweed
