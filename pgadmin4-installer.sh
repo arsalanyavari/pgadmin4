@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 #try to install Dependencies
 sudo apt-get -y install python3 pip python3-venv 2> /dev/null
@@ -6,12 +6,12 @@ sudo pacman -Syu python3 python-pip python-virtualenv 2> /dev/null
 sudo dnf -y install python3 python-pip python3-virtualenv 2> /dev/null
 
 #Create the necessary files
-mkdir /var/lib/pgadmin
-mkdir /var/log/pgadmin
+sudo mkdir /var/lib/pgadmin
+sudo mkdir /var/log/pgadmin
 
 #Change owner of files
-chown $USER /var/lib/pgadmin
-chown $USER /var/log/pgadmin
+sudo chown $USER /var/lib/pgadmin
+sudo chown $USER /var/log/pgadmin
 
 #Create main dierctory
 cd ~
@@ -28,12 +28,11 @@ shells=`ls ~ -a | grep rc$`
 
 for i in $shells
 do
-	sudo echo "PATH=$PATH:$PWD/pgadmin4/bin" >> $i
+	sudo echo "PATH=$PATH:$PWD/pgadmin4/bin" >> ~/$i
 
 done
 export PATH=$PATH:$PWD/pgadmin4/bin
 
-echo "$(tput setaf 2)Done Done =)$(tput sgr 0)"
-echo "open your browser on localhost:5050 after running pgadmin4 from your terminal"
+echo "$(tput setaf 2)open your browser on localhost:5050 after running pgadmin4 from your terminal$(tput sgr 0)"
 
 #arya-naweed
